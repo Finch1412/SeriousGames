@@ -14,7 +14,18 @@ public class Flippers : MonoBehaviour
     [SerializeField]
     private float zSpeed = 0f;
 
-    private bool mouseIsDown = false;
+    [SerializeField]
+    private float xSpeed2 = 0f;
+
+    [SerializeField]
+    private float ySpeed2 = 0f;
+
+    [SerializeField]
+    private float zSpeed2 = 0f;
+
+    private bool mouseLIsDown = false;
+
+    private bool mouseRIsDown = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,17 +38,37 @@ public class Flippers : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            mouseIsDown = true;
-            
+            mouseLIsDown = true;
         }
+
         if (Input.GetMouseButtonUp(0))
         {
-            mouseIsDown = false;
+            mouseLIsDown = false;
         }
-        if (mouseIsDown)
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            mouseRIsDown = true;
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            mouseRIsDown = false;
+        }
+
+
+        if (mouseLIsDown)
         {
             transform.Rotate(xSpeed, ySpeed, zSpeed);
         }
+
+        if (mouseRIsDown)
+        {
+            transform.Rotate(xSpeed2, ySpeed2, zSpeed2);
+        }
+
+
+   
 
     }
 }

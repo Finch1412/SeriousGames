@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/10Seconds.unity
+    guid: 6f421db391162af4392e1874b5ac790d
+  - enabled: 1
+    path: Assets/Scenes/TurtleWin.unity
+    guid: 99df5220d46ae0640b5aa6c291b0c416
   m_configObjects: {}
