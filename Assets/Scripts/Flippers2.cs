@@ -75,11 +75,11 @@ public class Flippers2 : MonoBehaviour
             {
                 if (shiftDown)
                 {
-                    transform.Rotate(xSpeed *-1, ySpeed*-1, zSpeed*-1);
+                    transform.Rotate(new Vector3(xSpeed * -1, ySpeed * -1, zSpeed * -1) * Time.deltaTime);
                 }
                 else
                 {
-                    transform.Rotate(xSpeed, ySpeed, zSpeed);
+                    transform.Rotate(new Vector3(xSpeed , ySpeed , zSpeed) * Time.deltaTime);
                 }
             }
         }
@@ -99,11 +99,11 @@ public class Flippers2 : MonoBehaviour
             {
                 if (shiftDown)
                 {
-                    transform.Rotate(xSpeed*-1, ySpeed*-1, zSpeed*-1);
+                    transform.Rotate(new Vector3(xSpeed * -1, ySpeed * -1, zSpeed * -1) * Time.deltaTime);
                 }
                 else
                 {
-                    transform.Rotate(xSpeed, ySpeed, zSpeed);
+                    transform.Rotate(new Vector3(xSpeed, ySpeed, zSpeed) * Time.deltaTime);
                 }
             }
         }
