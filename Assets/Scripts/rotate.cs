@@ -17,7 +17,7 @@ public class rotate : MonoBehaviour
     private float zSpeed = 0f;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         transform.Rotate(xSpeed,ySpeed,zSpeed);
     }
