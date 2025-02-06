@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TurtleWin.unity
     guid: 99df5220d46ae0640b5aa6c291b0c416
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 65dd8bd1eb6f93741b910211ad1e5102
   m_configObjects: {}
