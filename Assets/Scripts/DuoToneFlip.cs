@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class DuoToneFlip : MonoBehaviour
 {
-    
+    [SerializeField]
+    private GameObject leftObj;
+
+    [SerializeField]
+    private GameObject rightObj;
+
     public Material orangeMat;
+
     public Material blueMat;
 
     // Start is called before the first frame update
@@ -17,13 +23,45 @@ public class DuoToneFlip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.tag == "DuoOrange")
+        //Changes the colour of the objects to orange or blue based on the tag of the object
+        if (leftObj.tag == "DuoOrange")
         {
-            gameObject.GetComponent<Renderer>().material = orangeMat;
+            leftObj.GetComponent<Renderer>().material = orangeMat;
         }
-        else if (gameObject.tag == "DuoBlue")
+        else if (leftObj.tag == "DuoBlue")
         {
-            gameObject.GetComponent<Renderer>().material = blueMat;
+            leftObj.GetComponent<Renderer>().material = blueMat;
+        }
+        if (rightObj.tag == "DuoOrange")
+        {
+            rightObj.GetComponent<Renderer>().material = orangeMat;
+        }
+        else if (rightObj.tag == "DuoBlue")
+        {
+            rightObj.GetComponent<Renderer>().material = blueMat;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (leftObj.tag == "DuoOrange")
+            {
+                leftObj.tag = "DuoBlue";
+            }
+            else if (leftObj.tag == "DuoBlue")
+            {
+                leftObj.tag = "DuoOrange";
+            }
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (rightObj.tag == "DuoOrange")
+            {
+                rightObj.tag = "DuoBlue";
+            }
+            else if (rightObj.tag == "DuoBlue")
+            {
+                rightObj.tag = "DuoOrange";
+            }
         }
     }
 }
