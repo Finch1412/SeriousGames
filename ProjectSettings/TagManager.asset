@@ -9,6 +9,8 @@ TagManager:
   - Turtle
   - DuoBlue
   - DuoOrange
+  - BlueWall
+  - OrangeWall
   layers:
   - Default
   - TransparentFX

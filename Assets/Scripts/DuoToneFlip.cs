@@ -23,44 +23,48 @@ public class DuoToneFlip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Changes the colour of the objects to orange or blue based on the tag of the object
-        if (leftObj.tag == "DuoOrange")
+        // If the left and right objects are not null, allow mouse controls.
+        if(leftObj != null && rightObj != null)
         {
-            leftObj.GetComponent<Renderer>().material = orangeMat;
-        }
-        else if (leftObj.tag == "DuoBlue")
-        {
-            leftObj.GetComponent<Renderer>().material = blueMat;
-        }
-        if (rightObj.tag == "DuoOrange")
-        {
-            rightObj.GetComponent<Renderer>().material = orangeMat;
-        }
-        else if (rightObj.tag == "DuoBlue")
-        {
-            rightObj.GetComponent<Renderer>().material = blueMat;
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
+            //Changes the colour of the objects to orange or blue based on the tag of the object
             if (leftObj.tag == "DuoOrange")
             {
-                leftObj.tag = "DuoBlue";
+                leftObj.GetComponent<Renderer>().material = orangeMat;
             }
             else if (leftObj.tag == "DuoBlue")
             {
-                leftObj.tag = "DuoOrange";
+                leftObj.GetComponent<Renderer>().material = blueMat;
             }
-        }
-        if (Input.GetMouseButtonDown(1))
-        {
             if (rightObj.tag == "DuoOrange")
             {
-                rightObj.tag = "DuoBlue";
+                rightObj.GetComponent<Renderer>().material = orangeMat;
             }
             else if (rightObj.tag == "DuoBlue")
             {
-                rightObj.tag = "DuoOrange";
+                rightObj.GetComponent<Renderer>().material = blueMat;
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (leftObj.tag == "DuoOrange")
+                {
+                    leftObj.tag = "DuoBlue";
+                }
+                else if (leftObj.tag == "DuoBlue")
+                {
+                    leftObj.tag = "DuoOrange";
+                }
+            }
+            if (Input.GetMouseButtonDown(1))
+            {
+                if (rightObj.tag == "DuoOrange")
+                {
+                    rightObj.tag = "DuoBlue";
+                }
+                else if (rightObj.tag == "DuoBlue")
+                {
+                    rightObj.tag = "DuoOrange";
+                }
             }
         }
     }
