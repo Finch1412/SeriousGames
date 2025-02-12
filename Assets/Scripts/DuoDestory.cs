@@ -16,12 +16,13 @@ public class DuoDestory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.Find("GameManager");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        gameManager = GameObject.Find("GameManager");
         transform.position -= new Vector3(0, 0, WallSpeed) * Time.deltaTime;
     }
 
@@ -39,17 +40,17 @@ public class DuoDestory : MonoBehaviour
 
                 gameManager.GetComponent<TimerUP>().gameOver = true;
             }
-            if (gameObject.tag == "OrangeWall")
+        }
+        if (gameObject.tag == "OrangeWall")
+        {
+            if (other.tag == "DuoBlue")
             {
-                if (other.tag == "DuoBlue")
-                {
-                    Destroy(other.gameObject, 1f);
+                Destroy(other.gameObject, 1f);
 
-                    StartCoroutine(shrinkObject(other.gameObject));
+                StartCoroutine(shrinkObject(other.gameObject));
 
-                    gameManager.GetComponent<TimerUP>().gameOver = true;
+                gameManager.GetComponent<TimerUP>().gameOver = true;
 
-                }
             }
         }
     }
