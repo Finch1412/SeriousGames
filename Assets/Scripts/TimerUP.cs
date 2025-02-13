@@ -2,21 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TimerUP : MonoBehaviour
 {
     public TMP_Text timerText; // Assign a UI Text element in the Inspector
+    public GameObject restartText;
     private float elapsedTime = 0f;
-    private bool isRunning = true;
+    public bool isRunning = false;
 
     public bool gameOver = false;
 
     void Update()
     {
-        if (gameOver == false)
+        if(isRunning)
         {
-            elapsedTime += Time.deltaTime;
-            UpdateTimerDisplay();
+            if (gameOver == false)
+            {
+                elapsedTime += Time.deltaTime;
+                UpdateTimerDisplay();
+            }
+
+            if (gameOver == true)
+            {
+                restartText.SetActive(true);
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    SceneManager.LoadScene("DuoTone");
+                }
+            }
         }
     }
 

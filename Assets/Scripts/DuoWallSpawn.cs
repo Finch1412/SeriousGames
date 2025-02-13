@@ -16,12 +16,39 @@ public class DuoWallSpawn : MonoBehaviour
     [SerializeField]
     private float spdIncreaseFreq = 1.0f;
 
+    private bool gameStarted = false;
+    private bool canSpace = true;
+
+    public GameObject startText;
+
+    public TimerUP timerUP;
+
     void Start()
     {
-        currentSpawnDelay = initialSpawnDelay;
-        SpawnWall();
-        StartCoroutine(SpawnWalls());
-        StartCoroutine(Quicker());
+        timerUP = FindAnyObjectByType<TimerUP>();
+    }
+
+    private void Update()
+    {
+        if (canSpace)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                gameStarted = true;
+                timerUP.isRunning = true;
+            }
+        }
+        if (gameStarted)
+        {
+            currentSpawnDelay = initialSpawnDelay;
+            SpawnWall();
+            StartCoroutine(SpawnWalls());
+            StartCoroutine(Quicker());
+            gameStarted = false;
+            canSpace = false;
+            startText.SetActive(false);
+        }
+
     }
 
     IEnumerator SpawnWalls()
