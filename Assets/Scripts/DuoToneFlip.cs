@@ -44,7 +44,7 @@ public class DuoToneFlip : MonoBehaviour
                 rightObj.GetComponent<Renderer>().material = blueMat;
             }
 
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetMouseButtonDown(0))
             {
                 if (leftObj.tag == "DuoOrange")
                 {
@@ -55,7 +55,7 @@ public class DuoToneFlip : MonoBehaviour
                     leftObj.tag = "DuoOrange";
                 }
             }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetMouseButtonDown(1))
             {
                 if (rightObj.tag == "DuoOrange")
                 {
