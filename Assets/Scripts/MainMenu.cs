@@ -15,13 +15,13 @@ public class MainMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MenuRitual");
         }
     }
 
     public void PlayGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("10Seconds");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Ritual");
     }
 
     public void QuitGame()
