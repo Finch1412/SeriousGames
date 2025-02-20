@@ -11,6 +11,7 @@ TagManager:
   - DuoOrange
   - BlueWall
   - OrangeWall
+  - CinemachineTarget
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Switches
   - 
   - 
   - 
