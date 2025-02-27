@@ -20,10 +20,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/DuoTone.unity
     guid: 5b23ca47d5caa4349a7e7705424b946d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MenuRitual.unity
     guid: ae8d561f2ccc1ce4ea4c6bc938cb093b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Ritual.unity
     guid: 0311447e9b68c0a46a3bf1485dc5f889
+  - enabled: 1
+    path: Assets/Scenes/KeepSake/KeepSakeMain.unity
+    guid: fe7bd86a99aa62e42975740d51ac382b
   m_configObjects: {}
