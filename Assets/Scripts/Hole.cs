@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -19,15 +20,67 @@ public class Hole : MonoBehaviour
 
     public GameObject digText;
 
+    public bool holeIsDug;
+
+    public bool dogCollected;
+
+    public GameObject dedDog;
+
+    public GameObject buryDogTXT;
+
+    public GameObject dogInHole;
+
+    public bool dogBuried = false;
+
+    public bool keepsakeTaken = false;
+
+    public GameObject takeKeepsakeTXT;
+
+    public GameObject collar;
+    public GameObject black;
+    public GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
         holeStage = 0;
+
+        holeIsDug = false;
+        
+        buryDogTXT.SetActive(false);
+
+        dogInHole.SetActive(false);
+        takeKeepsakeTXT.SetActive(false);
+        collar.SetActive(false);
+        black.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        dogCollected = dedDog.GetComponent<DedDog>().dogIsCollected;
+
+        if (dogBuried && !keepsakeTaken && isNearHole)
+        {
+            takeKeepsakeTXT.SetActive(true);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                keepsakeTaken = true;
+                Debug.Log("Treasures collar");
+                //takeKeepsakeTXT.SetActive(false);
+            }
+        }
+        if (keepsakeTaken)
+        {
+            takeKeepsakeTXT.SetActive(false);
+            collar.SetActive(true);
+            black.SetActive(true);
+            player.SetActive(false);
+            Time.timeScale = 0;
+        }
+
+        //dig hole
         if (isNearHole)
         {
             if (Input.GetMouseButtonDown(0))
@@ -38,6 +91,28 @@ public class Hole : MonoBehaviour
             }
         }
 
+        //bury dog
+        if (isNearHole && dogCollected && !dogBuried)
+        {
+            buryDogTXT.SetActive(true);
+            if (Input.GetMouseButtonDown (0))
+            {
+                dogInHole.SetActive(true);
+                dogBuried = true;
+            }
+        }
+        else
+        {
+            buryDogTXT.SetActive(false);
+        }
+        if (!isNearHole && !dogBuried)
+        {
+            buryDogTXT.SetActive(false);
+        }
+
+        //taking off the keepsake
+        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,7 +120,10 @@ public class Hole : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             isNearHole = true;
-            digText.SetActive(true);
+            if (holeStage <= 3)
+            {
+                digText.SetActive(true);
+            }
         }
     }
 
@@ -98,6 +176,7 @@ public class Hole : MonoBehaviour
             floor3.SetActive(false);
             floor4.SetActive(false);
             floor5.SetActive(true);
+            holeIsDug = true;
         }
     }
 }
