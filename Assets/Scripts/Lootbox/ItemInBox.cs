@@ -60,6 +60,7 @@ public class ItemInBox : MonoBehaviour
         //    isClosed = true;
         //}
         UpdateEarningsText();
+
     }
 
     private IEnumerator SpawnItem()
@@ -68,7 +69,7 @@ public class ItemInBox : MonoBehaviour
 
         
 
-        rewardRoll = Random.Range(0, 99);
+        rewardRoll = Random.Range(0, 100);
         if (rewardRoll < 50) // 50% chance for reward_01
         {
             itemPrefab = reward_01;
