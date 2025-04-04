@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8396753672037707858}
   - component: {fileID: 2760744561679402561}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Reward_06
   m_TagString: Loot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fe89d26a0d4c7c143837d699123393a2, type: 2}
+  - {fileID: 2100000, guid: 71ba70a3ba425234ea1ddf262cb11429, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

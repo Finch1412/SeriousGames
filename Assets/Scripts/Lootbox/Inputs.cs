@@ -9,7 +9,10 @@ public class Inputs : MonoBehaviour
 
     public GameObject loot;
 
-   
+    public float playerCut;
+    public float devCut;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +39,14 @@ public class Inputs : MonoBehaviour
                 {
                     Destroy(loot, 0.7f);
                 }
+
+                playerCut = itemInBox.rewardValue * 0.8f;
+                devCut = itemInBox.rewardValue * 0.2f;
+
+
+                itemInBox.playerTotal += playerCut;
+                itemInBox.devTotal += devCut;
+                
 
                 itemInBox.isSpinningDone = false;
                 //itemInBox.hasStartedSpawning = false;
