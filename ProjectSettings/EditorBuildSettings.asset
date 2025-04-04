@@ -29,7 +29,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/KeepSake/KeepSakeMain.unity
     guid: fe7bd86a99aa62e42975740d51ac382b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Language.unity
     guid: ee49dbedcee21114a91a25c62aa9230d
+  - enabled: 1
+    path: Assets/Scenes/LootBox.unity
+    guid: 7a57bab2fe9abe44eb3b0e74b2af029e
   m_configObjects: {}
