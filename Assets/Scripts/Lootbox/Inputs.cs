@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Inputs : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Inputs : MonoBehaviour
 
     public float playerCut;
     public float devCut;
+
+    public GameObject priceText;
 
 
 
@@ -29,6 +32,7 @@ public class Inputs : MonoBehaviour
             if (!itemInBox.isSpinningDone)
             {
                 Animator.SetBool("IsSpinning", true);
+                priceText.SetActive(false);
             }
             else
             {
@@ -41,12 +45,18 @@ public class Inputs : MonoBehaviour
                 }
 
                 playerCut = itemInBox.rewardValue * 0.8f;
+                
                 devCut = itemInBox.rewardValue * 0.2f;
-
+                
 
                 itemInBox.playerTotal += playerCut;
+                Math.Round(itemInBox.playerTotal, 2);
                 itemInBox.devTotal += devCut;
-                
+                Math.Round(itemInBox.devTotal, 2);
+
+                itemInBox.sellText.SetActive(false);
+                priceText.SetActive(true);
+
 
                 itemInBox.isSpinningDone = false;
                 //itemInBox.hasStartedSpawning = false;

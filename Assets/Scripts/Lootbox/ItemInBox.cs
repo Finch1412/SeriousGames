@@ -27,6 +27,9 @@ public class ItemInBox : MonoBehaviour
     public float playerTotal = 10f;
     public float devTotal = 0f;
 
+    public TMP_Text priceText;
+    public GameObject sellText;
+
     void Update()
     {
         // Start coroutine only once when spinning starts
@@ -95,8 +98,9 @@ public class ItemInBox : MonoBehaviour
         Instantiate(itemPrefab, transform.position, Quaternion.identity);
         isSpinningDone = true;
 
-        // Update earnings
-        
+        sellText.SetActive(true);
+        priceText.text = "£" + rewardValue.ToString() + "0";
+
 
         UpdateEarningsText(); 
     }
