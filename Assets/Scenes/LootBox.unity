@@ -238,7 +238,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -259,6 +259,29 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &953446810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 454059340096652617, guid: eb0f1db4fe21de74882c5dd5cac7c93c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1953981861}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &953446814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953446810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924c0cfa6e65e8c4489331ea5be65b6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 6490722577371454987, guid: b1b5ad56487ce6a40ba065fe6babbd94,
+    type: 3}
+  lootBoxAnimator: {fileID: 1689950659}
+  isSpinningDone: 0
+  hasStartedSpawning: 0
 --- !u!1 &1097184607
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +444,53 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.4060082, y: 2.2360916, z: -5.1842813}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1674546584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1674546586}
+  - component: {fileID: 1674546585}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1674546585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674546584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe057d2364950945ab5e8ed6ad4eecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 1689950659}
+  itemInBox: {fileID: 0}
+  loot: {fileID: 0}
+--- !u!4 &1674546586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674546584}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -17.188456, y: 4.0172405, z: 1.7719967}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -764,6 +834,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1689950659}
+    - targetCorrespondingSourceObject: {fileID: 454059340096652617, guid: eb0f1db4fe21de74882c5dd5cac7c93c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 953446814}
   m_SourcePrefab: {fileID: 100100000, guid: eb0f1db4fe21de74882c5dd5cac7c93c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -773,3 +847,4 @@ SceneRoots:
   - {fileID: 1097184609}
   - {fileID: 1953981861}
   - {fileID: 1324513895}
+  - {fileID: 1674546586}

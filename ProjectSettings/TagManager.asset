@@ -12,6 +12,7 @@ TagManager:
   - BlueWall
   - OrangeWall
   - CinemachineTarget
+  - Loot
   layers:
   - Default
   - TransparentFX
