@@ -48,6 +48,11 @@ public class ItemInBox : MonoBehaviour
             lootBoxAnimator.SetBool("IsSpinning", false);
         }
 
+        if (isSpinningDone && Input.GetMouseButtonDown(0))
+        {
+            lootBoxAnimator.SetBool("IsSpinning", false);
+        }
+
         if (lootBoxAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
         {
             hasStartedSpawning = false;

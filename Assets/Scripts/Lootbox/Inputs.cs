@@ -64,5 +64,43 @@ public class Inputs : MonoBehaviour
             }
 
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (!itemInBox.isSpinningDone)
+            {
+                Animator.SetBool("IsSpinning", true);
+                priceText.SetActive(false);
+            }
+            else
+            {
+                Animator.SetBool("IsSpinning", false);
+
+                GameObject[] lootObjects = GameObject.FindGameObjectsWithTag("Loot");
+                foreach (GameObject loot in lootObjects)
+                {
+                    Destroy(loot, 0.7f);
+                }
+
+                playerCut = itemInBox.rewardValue * 0.8f;
+
+                devCut = itemInBox.rewardValue * 0.2f;
+
+
+                itemInBox.playerTotal += playerCut;
+                Math.Round(itemInBox.playerTotal, 2);
+                itemInBox.devTotal += devCut;
+                Math.Round(itemInBox.devTotal, 2);
+
+                itemInBox.sellText.SetActive(false);
+                priceText.SetActive(true);
+
+
+                itemInBox.isSpinningDone = false;
+                //itemInBox.hasStartedSpawning = false;
+
+            }
+
+        }
     }
 }
