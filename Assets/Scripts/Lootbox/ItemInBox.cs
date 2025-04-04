@@ -73,33 +73,38 @@ public class ItemInBox : MonoBehaviour
         {
             itemPrefab = reward_01;
             rewardValue = 0.20f;
+            priceText.text = "£" + rewardValue.ToString() + "0";
         }
         else if (rewardRoll < 80) // 25% chance for reward_02
         {
             itemPrefab = reward_02;
             rewardValue = 0.50f;
+            priceText.text = "£" + rewardValue.ToString() + "0";
         }
         else if (rewardRoll < 90) // 15% chance for reward_03
         {
             itemPrefab = reward_03;
             rewardValue = 1.80f;
+            priceText.text = "£" + rewardValue.ToString() + "0";
         }
         else if (rewardRoll < 99) // 8% chance for reward_04
         {
             itemPrefab = reward_04;
             rewardValue = 8.00f;
+            priceText.text = "£" + rewardValue.ToString() + ".00";
         }
         else // 1% chance for reward_05
         {
             itemPrefab = reward_05;
             rewardValue = 100.00f;
+            priceText.text = "£" + rewardValue.ToString() + ".00";
         }
 
         Instantiate(itemPrefab, transform.position, Quaternion.identity);
         isSpinningDone = true;
 
         sellText.SetActive(true);
-        priceText.text = "£" + rewardValue.ToString() + "0";
+        
 
 
         UpdateEarningsText(); 

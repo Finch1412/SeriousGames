@@ -1063,9 +1063,9 @@ MonoBehaviour:
   hasStartedSpawning: 0
   reward_01: {fileID: 6490722577371454987, guid: 1ddae247f028df546b1f78c35d60474d,
     type: 3}
-  reward_02: {fileID: 6490722577371454987, guid: b1b5ad56487ce6a40ba065fe6babbd94,
+  reward_02: {fileID: 6490722577371454987, guid: 9aad331bac5d4c248b0842896fc73c01,
     type: 3}
-  reward_03: {fileID: 6490722577371454987, guid: 9aad331bac5d4c248b0842896fc73c01,
+  reward_03: {fileID: 6490722577371454987, guid: b1b5ad56487ce6a40ba065fe6babbd94,
     type: 3}
   reward_04: {fileID: 6490722577371454987, guid: 218733cd5041602439da757bf0135197,
     type: 3}
