@@ -20,7 +20,7 @@ public class SheepState_Straining : SheepState
         if (timer > strainTime)
         {
             sheep.animator.SetBool("IsLambing", false);
-            sheep.lambing = false; // simulate birth
+            //sheep.lambing = false; // simulate birth
             fsm.SetState(new SheepState_Wander(fsm, sheep));
         }
     }
